@@ -9,8 +9,8 @@ class Usuario(models.Model):
     email = models.EmailField(max_length=254)
     data_cadastro = models.DateField(default=timezone.now)
     data_nascimento = models.DateField()
-    acesso = models.CharField(max_length=100)
-    ativo = models.CharField(max_length=20)
+    acesso = models.CharField(max_length=100, default="comum")
+    ativo = models.BooleanField(default=True)
     pontos = models.IntegerField(default=0) #todo novo jogador começa zerado
 
     def __str__(self):

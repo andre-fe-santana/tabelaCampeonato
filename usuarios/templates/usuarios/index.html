@@ -1,1 +1,41 @@
-{% extends "global/base.html"%}
+{% comment %} {% extends "global/base.html"%} {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários</title>
+</head>
+<body>
+    <a href="cadastrar"><button>Cadastrar Usuário +</button></a>
+
+    <div class="container">
+        <table class="table">
+            <caption class="table-caption">
+                Listagem dos usuários
+            </caption>
+    
+            <thead>
+                <tr class="table-row table-row-header">
+                    <th class="table-header">Username (@)</th>
+                    <th class="table-header">Nome</th>
+                    <th class="table-header">Email</th>
+                    <th class="table-header">Pontos</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in usuarios %}
+                    <tr class="table-row">
+                        {% comment %} <td class="table-cel"><img src={{ usuario.imagem }} alt="Imagem do Usuário"></td> {% endcomment %}
+                        <td class="table-cel">{{ usuario.username }}</td>
+                        <td class="table-cel">{{ usuario.nome }}</td>
+                        <td class="table-cel">{{ usuario.email }}</td>
+                        <td class="table-cel">{{ usuario.pontos }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
