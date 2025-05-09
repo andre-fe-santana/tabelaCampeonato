@@ -23,7 +23,7 @@ def criarUsuario(request):
 
         if form.is_valid():
             form.save()
-            return redirect('/usuarios/')
+            return redirect('/usuarios/login')
     else:
         form = UsuarioForm()
 

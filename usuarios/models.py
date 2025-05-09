@@ -14,5 +14,5 @@ class Usuario(models.Model):
     pontos = models.IntegerField(default=0) #todo novo jogador começa zerado
 
     def __str__(self):
-        return f"{self.name} ({self.username}) foi criado(a) no sistema!"
+        return f"{self.nome} ({self.username}) foi criado(a) no sistema!"
     
