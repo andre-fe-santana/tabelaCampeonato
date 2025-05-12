@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ partida.time_casa.nome }} x {{ partida.time_fora.nome }}</title>
+</head>
+<body>
+    <h1>Criar Palpite</h1>
+    <form method="post">
+        {% csrf_token %}
+
+        <p>{{ partida.time_casa.nome }} {{ form.placar_casa }} X {{ form.placar_fora }} {{ partida.time_fora.nome }}</p>
+        <p>Hora: {{ partida.data_partida|time:"h:m"}}</p>
+        <p>Estádio: {{ estadio.nome }}</p>
+        <p>Campeonato: {{ campeonato.nome }}</p>
+        <br>
+        <p>Jogador do Gol: {{form.jogador_gol}}</p>
+        <p>Minuto do Gol: {{ form.minuto_gol }}</p>
+        <p>Usuário: {{ form.usuario }}</p>
+
+        <!-- colocar as opções de jogador e minutagem -->
+
+        <button type="submit">Lançar Palpite</button>
+    </form>
+</body>
+</html>

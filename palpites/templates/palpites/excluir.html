@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ partida.time_casa.nome }} x {{ partida.time_fora.nome }}</title>
+</head>
+<body>
+    <h1>Confirmar exclusão</h1>
+    <p>Quer mesmo apagar o palpite {{ partida.time_casa.nome }} x {{ partida.time_fora.nome }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Apagar</button>
+    </form>
+    <br>
+    <a href="/palpite"><button>Cancelar</button></a>
+</body>
+</html>

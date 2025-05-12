@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palpites</title>
+</head>
+<body>
+    <h1> Jogos do Dia </h1>
+    <div class="container">
+        <ul>
+        {% for partida in partidas %}
+            <li>
+                <p> {{ partida.time_casa }} X {{ partida.time_fora }}</p>
+                <p> Hora: {{ partida.data_partida}}</p>
+                <p> Campeonato: {{ partida.campeonato }}</p>
+                <p> Estádio: {{ partida.estadio }}</p>
+                <p><a href="{% url 'criarPalpite' partida.id %}"><button>Lançar Palpite +</button></a></p>
+            </li>
+        {% endfor %}
+
+
+        </ul>
+    </div>
+</body>
+</html>

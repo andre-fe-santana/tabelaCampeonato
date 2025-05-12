@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palpites</title>
+</head>
+<body>
+    <h1> Palpites </h1>
+    <div class="container">
+        <ul>
+        {% for palpite in palpites %}
+            <li>
+                <p> Time Casa {{ palpite.placar_casa }} x {{ palpite.placar_fora }} Time Fora</p>
+                <p> Gol do Jogador: {{ palpite.jogador_gol }}</p>
+                <p> Minuto do Gol: {{ palpite.minuto_gol }}</p>
+                <p> Criado em: {{ palpite.data_cadastro|date:"d/m/Y H:i" }}</p>
+                <p> Criado por: {{ palpite.usuario }}</p>
+                <p> <a href="{% url "editarPalpite" palpite.id %}"><button>Editar Palpite</button></a></p>
+                <p> <a href="{% url "excluirPalpite" palpite.id %}"><button>Excluir Palpite</button></a></p>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
